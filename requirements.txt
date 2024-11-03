@@ -1,4 +1,4 @@
-
 Flask==2.0.2
-transformers==4.12.5
-torch==1.10.0
+transformers==4.30.2
+torch==2.5.1
+pip==24.3.1  # Add this to ensure pip is updated
