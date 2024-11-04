@@ -19,7 +19,7 @@ def analyze():
     try:
         # Call Hugging Face API with the LegalBERT model
         response = requests.post(
-            "https://api-inference.huggingface.co/models/nlpaueb/legal-bert-base-uncased",
+            "https://api-inference.huggingface.co/nlpaueb/legal-bert-base-uncased",
             headers={"Authorization": f"Bearer {HUGGING_FACE_API_KEY}"},
             json={"inputs": text}
         )
