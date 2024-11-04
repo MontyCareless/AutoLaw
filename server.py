@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Get the Hugging Face API key from environment variables
 HUGGING_FACE_API_KEY = os.getenv("HUGGING_FACE_API_KEY")
@@ -35,7 +37,6 @@ def analyze():
 
         # Return the labels and explanations as a JSON response
         return jsonify({"labels": labels, "explanations": explanations})
-
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": "An error occurred while processing the request"}), 500
